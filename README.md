@@ -1,5 +1,5 @@
 # terraform-nquakesv-nomad
-Quake: Coming to a Terraform registry near uwu
+Run Quake as a container in Nomad.
 
 # Example usage
 
@@ -15,3 +15,7 @@ resource "random_password" "rcon" {
 }
 
 ```
+
+# Future work
+
+- Support running under containerd
