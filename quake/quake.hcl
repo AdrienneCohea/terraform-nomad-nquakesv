@@ -13,6 +13,23 @@ job "quake" {
     }
 
     task "nquakesv" {
+      service {
+        meta = {
+          %{for key, value in service_meta}
+          "${key}" = "${value}"
+          %{endfor}
+        }
+
+        port = "quake"
+
+        check {
+          type     = "tcp"
+          port     = "quake"
+          interval = "10s"
+          timeout  = "2s"
+        }
+      }
+
       driver = "docker"
 
       config {
