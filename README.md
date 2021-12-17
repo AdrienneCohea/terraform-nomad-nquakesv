@@ -1,5 +1,5 @@
 # terraform-nquakesv-nomad
-Run a Quake container in Nomad
+Quake: Coming to a Terraform registry near uwu
 
 # Example usage
 
