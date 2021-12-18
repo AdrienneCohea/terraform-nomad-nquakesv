@@ -4,8 +4,15 @@ variable "datacenter" {
   description = "The Nomad datacenter in which to run Quake"
 }
 
+variable "static_port" {
+  type        = number
+  default     = 27500
+  description = "Static port to use if the load balancer cannot have a different backend service port than the frontend port"
+}
+
 variable "rcon_password" {
   type        = string
+  default     = ""
   description = "The password for RCON (remote console)"
 }
 

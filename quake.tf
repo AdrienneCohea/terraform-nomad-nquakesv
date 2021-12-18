@@ -1,7 +1,8 @@
 resource "nomad_job" "quake" {
   jobspec = templatefile("${path.module}/quake/quake.hcl", {
     datacenter    = var.datacenter
-    rcon_password = var.rcon_password
+    static_port   = var.static_port
+    rcon_password = coalesce(var.rcon_password, random_password.rcon.result)
     service_meta = merge({
       protocol = "udp"
       port     = 27500

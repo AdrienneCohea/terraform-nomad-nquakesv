@@ -8,7 +8,8 @@ job "quake" {
       mode = "bridge"
 
       port "quake" {
-        to = 27500
+        %{if static_port != 0}static = ${static_port}%{endif}
+        to     = 27500
       }
     }
 
