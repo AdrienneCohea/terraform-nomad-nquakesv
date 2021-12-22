@@ -14,6 +14,21 @@ job "quake" {
     }
 
     task "nquakesv" {
+      driver = "docker"
+
+      config {
+        image = "niclaslindstedt/nquakesv"
+      }
+
+      env {
+        RCON_PASSWORD = "${rcon_password}"
+      }
+
+      resources {
+        cpu    = ${cpu}
+        memory = ${memory}
+      }
+
       service {
         meta = {
           %{for key, value in service_meta}
@@ -29,16 +44,6 @@ job "quake" {
           interval = "10s"
           timeout  = "2s"
         }
-      }
-
-      driver = "docker"
-
-      config {
-        image = "niclaslindstedt/nquakesv"
-      }
-
-      env {
-        RCON_PASSWORD = "${rcon_password}"
       }
     }
   }

@@ -21,3 +21,15 @@ variable "service_meta" {
   default     = {}
   description = "Register the service in Consul with the given service metadata"
 }
+
+variable "cpu" {
+  type        = number
+  default     = 2000
+  description = "CPU request"
+}
+
+variable "memory" {
+  type        = number
+  default     = 1024
+  description = "Memory request"
+}
