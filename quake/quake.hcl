@@ -18,12 +18,36 @@ job "quake" {
 
       config {
         image = "niclaslindstedt/nquakesv"
+        entrypoint = ["/local/entrypoint.sh"]
       }
 
-      env {
-        HOSTNAME      = "${name}"
-        RCON_PASSWORD = "${rcon_password}"
-        SERVER_ADMIN  = "${admin_contact}"
+      template {
+        data        = <<EOF
+${ktx}
+EOF
+        destination = "local/ktx.cfg"
+      }
+
+      template {
+        data        = <<EOF
+${mvdsv}
+EOF
+        destination = "local/mvdsv.cfg"
+      }
+
+      template {
+        data        = <<EOF
+${pwd}
+EOF
+        destination = "local/pwd.cfg"
+      }
+
+      template {
+        data        = <<EOF
+${entrypoint}
+EOF
+        destination = "local/entrypoint.sh"
+        perms = "755"
       }
 
       resources {
@@ -32,9 +56,9 @@ job "quake" {
       }
 
       service {
-        meta = {
+        meta {
           %{for key, value in service_meta}
-          "${key}" = "${value}"
+          ${key} = "${value}"
           %{endfor}
         }
 

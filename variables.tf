@@ -9,6 +9,18 @@ variable "admin_contact" {
   description = "Admin contact (could be an email, a website, a GPG key idea, you get the idea)"
 }
 
+variable "report_url" {
+  type        = string
+  default     = "https://badplace.eu"
+  description = "URL to send match/race results to"
+}
+
+variable "report_key" {
+  type        = string
+  default     = "askmeag"
+  description = "Report key credential. Contact meag to find out what string to put here."
+}
+
 variable "datacenter" {
   type        = string
   default     = "dc1"
@@ -25,6 +37,12 @@ variable "rcon_password" {
   type        = string
   default     = ""
   description = "The password for RCON (remote console)"
+}
+
+variable "qtv_password" {
+  type        = string
+  default     = ""
+  description = "The password for QTV"
 }
 
 variable "service_meta" {
