@@ -1,7 +1,6 @@
 // server information
 hostname                      "${name}"
 sv_admininfo                  "${admin_contact}"
-sv_serverip                   "$ADDRESS:27500"
 qtv_streamport                27500
 
 // server settings

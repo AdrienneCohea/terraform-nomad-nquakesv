@@ -44,6 +44,13 @@ EOF
 
       template {
         data        = <<EOF
+${server}
+EOF
+        destination = "local/server.cfg"
+      }
+
+      template {
+        data        = <<EOF
 ${entrypoint}
 EOF
         destination = "local/entrypoint.sh"

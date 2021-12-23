@@ -1,4 +1,9 @@
 output "rcon_password" {
-  value     = random_password.rcon.result
+  value     = local.passwords.rcon
+  sensitive = true
+}
+
+output "qtv_password" {
+  value     = local.passwords.qtv
   sensitive = true
 }

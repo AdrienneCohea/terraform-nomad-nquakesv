@@ -23,6 +23,8 @@ echo "Using settings:"
   export ADDRESS=$SERVER_IP; echo " * SERVER_IP=$SERVER_IP"
 }
 
+echo "sv_serverip \"${ADDRESS}:27500\"" > /nquake/ktx/address.cfg
+
 [ ! -f /nquake/id1/pak0.pak ] && {
   echo -n "Downloading necessary files..."
   (wget -qO qsw106.zip https://github.com/nQuake/distfiles/raw/master/qsw106.zip \
