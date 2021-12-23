@@ -8,8 +8,8 @@ resource "nomad_job" "quake" {
     ktx          = templatefile("${path.module}/quake/ktx.cfg.tpl", local.ktx)
     mvdsv        = templatefile("${path.module}/quake/mvdsv.cfg.tpl", local.mvdsv)
     pwd          = templatefile("${path.module}/quake/pwd.cfg.tpl", local.passwords)
-    server       = file("${path.module}/quake/server.cfg.tpl")
-    entrypoint   = file("${path.module}/quake/entrypoint.sh")
+    server       = templatefile("${path.module}/quake/server.cfg.tpl", {})
+    entrypoint   = templatefile("${path.module}/quake/entrypoint.sh", {})
   })
 
   hcl2 {

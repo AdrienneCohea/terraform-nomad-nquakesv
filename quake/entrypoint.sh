@@ -23,7 +23,7 @@ echo "Using settings:"
   export ADDRESS=$SERVER_IP; echo " * SERVER_IP=$SERVER_IP"
 }
 
-echo "sv_serverip \"${ADDRESS}:27500\"" > /nquake/ktx/address.cfg
+echo "sv_serverip \"$${ADDRESS}:27500\"" > /nquake/ktx/address.cfg
 
 [ ! -f /nquake/id1/pak0.pak ] && {
   echo -n "Downloading necessary files..."
@@ -56,6 +56,7 @@ echo "OK"
 echo "Configuration nQuake..."
 cp /local/ktx.cfg /nquake/ktx/ktx.cfg || error "Could not configure ktx"
 cp /local/mvdsv.cfg /nquake/ktx/mvdsv.cfg || error "Could not configure mvdsv"
+cp /local/server.cfg /nquake/ktx/server.cfg || error "Could not configure server"
 cp /local/pwd.cfg /nquake/ktx/pwd.cfg || error "Could not set secret"
 echo "OK"
 
