@@ -51,6 +51,13 @@ EOF
 
       template {
         data        = <<EOF
+${vip_ip}
+EOF
+        destination = "local/vip_ip.cfg"
+      }
+
+      template {
+        data        = <<EOF
 ${entrypoint}
 EOF
         destination = "local/entrypoint.sh"

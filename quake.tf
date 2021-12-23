@@ -8,12 +8,17 @@ resource "nomad_job" "quake" {
     ktx          = templatefile("${path.module}/quake/ktx.cfg.tpl", local.ktx)
     mvdsv        = templatefile("${path.module}/quake/mvdsv.cfg.tpl", local.mvdsv)
     pwd          = templatefile("${path.module}/quake/pwd.cfg.tpl", local.passwords)
+    vip_ip       = templatefile("${path.module}/quake/vip_ip.cfg.tpl", local.vip)
     server       = templatefile("${path.module}/quake/server.cfg.tpl", {})
     entrypoint   = templatefile("${path.module}/quake/entrypoint.sh", {})
   })
 
   hcl2 {
     enabled = true
+  }
+
+  lifecycle {
+    ignore_changes = [allocation_ids]
   }
 }
 
@@ -36,6 +41,10 @@ locals {
   passwords = {
     rcon = coalesce(var.rcon_password, random_password.rcon.result)
     qtv  = coalesce(var.qtv_password, random_password.qtv.result)
+  }
+
+  vip = {
+    admin_client_ips = var.admin_client_ips
   }
 
   service_meta = merge({

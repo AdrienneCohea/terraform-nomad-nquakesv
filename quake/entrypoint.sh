@@ -57,6 +57,7 @@ echo "Configuration nQuake..."
 cp /local/ktx.cfg /nquake/ktx/ktx.cfg || error "Could not configure ktx"
 cp /local/mvdsv.cfg /nquake/ktx/mvdsv.cfg || error "Could not configure mvdsv"
 cp /local/server.cfg /nquake/ktx/server.cfg || error "Could not configure server"
+cp /local/vip_ip.cfg /nquake/ktx/vip_ip.cfg || error "Could not set VIPs"
 cp /local/pwd.cfg /nquake/ktx/pwd.cfg || error "Could not set secret"
 echo "OK"
 

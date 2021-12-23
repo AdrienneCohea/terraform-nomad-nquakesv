@@ -21,6 +21,11 @@ variable "report_key" {
   description = "Report key credential. Contact meag to find out what string to put here."
 }
 
+variable "admin_client_ips" {
+  type = list(string)
+  description = "Ridiculous client IP-based authentication."
+}
+
 variable "modes" {
   type = object({
     defmode   = string
