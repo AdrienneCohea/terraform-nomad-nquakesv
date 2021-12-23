@@ -5,11 +5,11 @@ set k_motd3                     "Available game modes:"
 set k_motd4                     "1on1, 2on2, 4on4, 10on10, ffa, ctf"
 
 // modes
-set k_defmode                   2on2            // default mode on server
+set k_defmode                   ${defmode}      // default mode on server
 set k_allowed_free_modes        255             // allowed free modes (bit mask): 1=1on1, 2=2on2, 4=3on3, 8=4on4, 16=10on10, 32=ffa 64=ctf 128=hoonymode
-set k_defmap                    dm4             // server homemap. server will change to this when last player leaves the server
-set k_mode                      2               // server mode (1 = duel, 2 = team, 3 = ffa, 4 = ctf)
-set k_matchless                 0               // run ktx as a regular match server or as a matchless (ffa) server (0 = regular, 1 = matchless)
+set k_defmap                    ${map}          // server homemap. server will change to this when last player leaves the server
+set k_mode                      ${mode}         // server mode (1 = duel, 2 = team, 3 = ffa, 4 = ctf)
+set k_matchless                 ${matchless}    // run ktx as a regular match server or as a matchless (ffa) server (0 = regular, 1 = matchless)
 set k_use_matchless_dir         1               // use configs/usermodes/matchless instead of [...]/ffa (0 = no, 1 = yes)
 
 // general settings

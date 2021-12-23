@@ -22,6 +22,10 @@ locals {
     name       = var.name
     report_url = var.report_url
     report_key = var.report_key
+    defmode    = var.modes.defmode
+    mode       = var.modes.current
+    map        = var.modes.map
+    matchless  = var.modes.matchless ? 1 : 0
   }
 
   mvdsv = {

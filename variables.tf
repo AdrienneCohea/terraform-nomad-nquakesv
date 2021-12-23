@@ -21,6 +21,15 @@ variable "report_key" {
   description = "Report key credential. Contact meag to find out what string to put here."
 }
 
+variable "modes" {
+  type = object({
+    defmode   = string
+    current   = number
+    map       = string
+    matchless = bool
+  })
+}
+
 variable "datacenter" {
   type        = string
   default     = "dc1"
