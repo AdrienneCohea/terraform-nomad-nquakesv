@@ -21,7 +21,9 @@ job "quake" {
       }
 
       env {
+        HOSTNAME      = "${name}"
         RCON_PASSWORD = "${rcon_password}"
+        SERVER_ADMIN  = "${admin_contact}"
       }
 
       resources {

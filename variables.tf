@@ -1,3 +1,14 @@
+variable "name" {
+  type        = string
+  default     = "The Bad Place in Nomad"
+  description = "Server name"
+}
+variable "admin_contact" {
+  type        = string
+  default     = "anon <anonymous@example.com>"
+  description = "Admin contact (could be an email, a website, a GPG key idea, you get the idea)"
+}
+
 variable "datacenter" {
   type        = string
   default     = "dc1"
