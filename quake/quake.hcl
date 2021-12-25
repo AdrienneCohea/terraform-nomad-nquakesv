@@ -70,6 +70,7 @@ EOF
       }
 
       service {
+        name = "quake"
         meta {
           %{for key, value in service_meta}
           ${key} = "${value}"
